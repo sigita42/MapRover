@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Index - My ASP.NET MVC Application</title>
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <script src="/Scripts/jquery-1.8.2.js"></script>
+
+        
+        <link href="/Content/site.css" rel="stylesheet"/>
+
+        <script src="/Scripts/modernizr-2.5.3.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title"><a href="/">Let youself explore Europe...</a></p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                            <ul>
+        <li><a href="/Account/Register" id="registerLink">Register</a></li>
+        <li><a href="/Account/Login" id="loginLink">Log in</a></li>
+    </ul>
+
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li><a href="/Map">Map</a></li>
+                            <li><a href="/Home/About">About</a></li>
+                            <li><a href="/Home/Contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            <hr />
+            
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Index.</h1>
+                <h2></h2>
+            </hgroup>
+            <p>
+                Here will be the Map of Europe!
+            </p>
+        </div>
+    </section>
+
+            <section class="content-wrapper main-content clear-fix">
+                
+
+<h3>We suggest the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Getting Started</h5>
+        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+        enables a clean separation of concerns and that gives you full control over markup
+        for enjoyable, agile development. ASP.NET MVC includes many features that enable
+        fast, TDD-friendly development for creating sophisticated applications that use
+        the latest web standards.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
+    </li>
+
+    <li class="two">
+        <h5>Add NuGet packages and jump-start your coding</h5>
+        NuGet makes it easy to install and update free libraries and tools.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
+    </li>
+
+    <li class="three">
+        <h5>Find Web Hosting</h5>
+        You can easily find a web hosting company that offers the right mix of features
+        and price for your applications.
+        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
+    </li>
+</ol>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+        var map;
+        function initialize () {
+            var mapOptions = {
+                zoom: 8,
+                center: new google.maps.LatLng(-34.397, 150.644),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('map_canvas'),
+                mapOptions);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	<div id="map_canvas" style="width:200px; height:200px"></div>
+
+
+            </section>
+        </div>
+          <hr />
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; 2012 - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+        <!--sheit bija script-->
+    </body>
+</html>
