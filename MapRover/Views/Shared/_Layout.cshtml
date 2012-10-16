@@ -1,50 +1,51 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("Let youself explore Europe...", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Map", "Index", "Map")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div id="body">
-            <hr />
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.Basic.cshtml";
+}
+
+@section Navigation {
+    <nav>
+        <ul id="menu">
+            <li>@Html.ActionLink("Map", "Index", "Map")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        </ul>
+    </nav>
+}
+
+<div id="body">
+    <hr />
+    <section class="featured">
+        <div class="content-wrapper">
+            @RenderBody()            
         </div>
-          <hr />
-        <footer>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        <!--If i want 2 rows of menu items then i should use following code.Just need to change these menu items
+         <div class="content-wrapper">
+            <div class="float-right">
+         <nav>
+            <ul id="container">
+                <li>@Html.ActionLink("Map", "Index", "Map")</li>
+                </ul>
+          <ul id="container2">
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+              </ul>
+         <ul id="container3">
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+        </nav>
+        </div>
+        </div>-->
+        @RenderSection("RightBar", required:false)
+    </section> 
+    <!--i added here the footer so it appears for the map page-->
+     <hr />
+    <footer>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                    <p>&copy; @DateTime.Now.Year - MapRover - ASP.NET MVC Application</p>
                 </div>
             </div>
         </footer>
+</div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
-</html>
