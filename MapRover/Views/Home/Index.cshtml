@@ -5,16 +5,20 @@
     ViewBag.Title = "Home Page";
 }
 
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Map Rover</title>
-@Styles.Render("~/Content/themes/base/Site.css", "~/Content/Site.css")
-@Scripts.Render("~/bundles/modernizr")
-</head>
-
-<body>
-<div class="main-content"> 
-<h1>Seit jabut body</h1>
-</div>    
-</body>
-
+<div id="body">
+    <hr />
+    <section class="content-wrapper main-content clear-fix">
+        <div class="content-wrapper">
+            <div class="float-right" style="margin:50px auto">
+                <nav>
+                    <ul id="container">
+                        <li id="first">@Html.ActionLink("Map", "Index", "Map")</li>
+                        <li id="second">@Html.ActionLink("About", "About", "Home")</li>
+                        <li id="third">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <hr />
+</div>
