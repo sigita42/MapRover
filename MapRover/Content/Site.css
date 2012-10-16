@@ -15,16 +15,20 @@
     font-family: SourceSansProLight;
     src: url(themes/base/fonts/SourceSansPro/SourceSansPro-ExtraLight.ttf);
 }
+
 html {
-    background-image:url('/Content/themes/base/images/Wallpapers.jpg'); /*background colour of the most bottom part*/
-    margin: 0;
+    background-image:url('/Content/themes/base/images/panorama3.jpg');
+    background-position:bottom;
+    float: inherit;
+    /*background-image:url('/Content/themes/base/images/Wallpapers.jpg'); /*background colour of the most bottom part*/  
+    margin: auto;                                                            /*If i want pics in 1st page, I can chage it here*/
     padding: 0;
 }
 
 /*this is upper part*/
 body {
     background-color: /*#bbb4b4;*/ #363636;
-    border-top: solid 10px #000;
+    border-top: 0;
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -48,14 +52,14 @@ a {
     text-decoration: underline;
 }
 
-    a:link, a:visited,
-    a:active, a:hover {
-        color: #333;
-    }
+a:link, a:visited,
+a:active, a:hover {
+    color: #333;
+}
 
-    a:hover {
-        background-color: #c7d1d6;
-    }
+a:hover {
+    background-color: #c7d1d6;
+}
 
 header, footer, hgroup,
 nav, section navb {
@@ -119,10 +123,10 @@ h5, h6 {
     font-size: 1em;
 }
 
-    h5 a:link, h5 a:visited, h5 a:active {
-        padding: 0;
-        text-decoration: none;
-    }
+h5 a:link, h5 a:visited, h5 a:active {
+    padding: 0;
+    text-decoration: none;
+}
 
 
 /* main layout
@@ -131,12 +135,15 @@ h5, h6 {
 .content-wrapper {
     margin: 0 auto;
     max-width: 960px;
+    padding-bottom:60px; /*here i change the position of big nav bar in home/index */
+    padding-top:50px; /*here i change the position of big nav bar in home/index */
 }
 
 #body {
    background-image:url('/Content/themes/base/images/Wallpapers.jpg'); /*home/index thin part after header*/
    clear: both;
-   padding-bottom: 100px;
+   /*padding-top: initial;
+   /*padding-bottom: 100px; i can try using these 2 lines if i have troubles with footer*/
 }
 
 /*hight of the header*/
@@ -146,11 +153,14 @@ header .content-wrapper {
 
 footer {
     clear: both;
+    /*background-image:url('/Content/themes/base/images/Wallpapers.jpg');*/
     background-color: #363636;
     font-size: .8em;
-    height: 100px;
+    color:#c8c8c8;
+    height: 50px;
     /*hight of the footer*/
-    padding-bottom: 130px;
+    padding-bottom: 60px;
+    padding-top: 40px;
 }
 
 
@@ -158,7 +168,7 @@ footer {
 ----------------------------------------------------------*/
 .site-title {
     color: #c8c8c8;
-    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+    font-family: SourceSansProBold;
     font-size: 2.3em;
     margin: 0;
 }
@@ -169,7 +179,13 @@ footer {
     outline: none;
     text-decoration: none;
 }
-
+.site-subtitle {
+    float:left;
+    color: #c7d1d6;
+    font-family: SourceSansPro;
+    font-size: 1.5em;
+    margin: 0;
+}
 
 /* login
 ----------------------------------------------------------*/
@@ -180,30 +196,30 @@ footer {
     text-align: right;
 }
 
-    #login a {
-        background-color: #363636;
-        margin-left: 10px;
-        margin-right: 3px;
-        padding: 2px 3px;
-        text-decoration: none;
-        color: #efebeb;
-    }
+#login a {
+    background-color: #363636;
+    margin-left: 10px;
+    margin-right: 3px;
+    padding: 2px 3px;
+    text-decoration: none;
+    color: #efebeb;
+}
 
-    #login a.username {
-        background: none;
-        margin: 0;
-        padding: 0;
-        text-decoration: underline;
-    }
+#login a.username {
+    background: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+}
 
-    #login ul {
-        margin: 0;
-    }
+#login ul {
+    margin: 0;
+}
 
-    #login li {
-        display: inline;
-        list-style: none;
-    }
+#login li {
+    display: inline;
+    list-style: none;
+}
 
 
 /* menu
@@ -217,144 +233,120 @@ ul#menu {
     text-align: right;
 }
 
-    ul#menu li {
-        float:left;
-        display: inline;
-        list-style: none;
-        padding-left: 0px;
-        border-style:none;
-    }
+ul#menu li {
+    float:left;
+    display: inline;
+    list-style: none;
+    padding-left: 0px;
+    border-style:none;
+}
 
-        ul#menu li a {
-            background: #67E300;
-            color: #efebeb;
-            text-decoration: none;
-            padding:3px 15px 3px 15px;
-            border-style:none;
-        }
+ul#menu li a {
+    background: #4869D6;
+    color: #efebeb;
+    text-decoration: none;
+    padding:3px 15px 3px 15px;
+    border-style:none;
+}
 
-        ul#menu li a:hover {
-            background: #DF64BD;
-            color: #efebeb;
-            text-decoration: none;
-            padding: 3px 15px 3px 15px;
-        }
+ul#menu li a:hover {
+    background: #707ED7;
+    color: #efebeb;
+    text-decoration: none;
+    padding: 3px 15px 3px 15px;
+}
 
         /* Home page's menu
 ----------------------------------------------------------*/
       
-   body
+body
 {
 	text-align: center;
 }
 
-    ul#container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50em;
-        text-align: left;
+nav ul#container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+    text-align: left;
 }
 
-    ul#container li {     
-        float:left;
-        display: inline;
-        list-style: none;
-        padding-left: 15px;          
+nav ul#container li#first {     
+    float:left;
+    display: inline;
+    list-style: none;
+    padding-left: 15px;          
+}
+
+nav ul#container li#first a {
+    font-family: SourceSansPro;
+    font-size: 3em;
+    font-weight: 700;
+    background: #4869D6;
+    color: #efebeb;
+    text-decoration: none;
+    padding:30px 30px 30px 30px;
+    border-style:none;
+}
+
+nav ul#container li#first a:hover {
+    background: #707ED7;
+    color: #efebeb;
+    text-decoration: none;
+    padding: 30px 30px 30px 30px;
+}
+
+nav ul#container li#second {       
+    float:left;
+    display: inline;
+    list-style: none;
+    padding-left: 15px;
+}
+
+nav ul#container li#second a {
+    font-family: SourceSansPro;
+    font-size: 3em;
+    font-weight: 700;
+    background: #92EC00;
+    color: #efebeb;
+    text-decoration: none;
+    padding:30px 30px 30px 30px;
+    border-style:none;
+}
+
+nav ul#container li#second a:hover {
+    background: #A1F43D;
+    color: #efebeb;
+    text-decoration: none;
+    padding: 30px 30px 30px 30px;
+}
+/*treshais*/
+
+nav ul#container li#third {     
+    float:left;
+    display: inline;
+    list-style: none;
+    padding-left: 15px;          
+}
+
+nav ul#container li#third a {
+    font-family: SourceSansPro;
+    font-size: 3em;
+    font-weight: 700;
+    background: #E93A90;
+    color: #efebeb;
+    text-decoration: none;
+    padding:30px 30px 30px 30px;
+    border-style:none;
     }
 
-    ul#container li a {
-        font-family: SourceSansPro;
-        font-size: 3em;
-        font-weight: 700;
-        background: #4869D6;
-        color: #efebeb;
-        text-decoration: none;
-        padding:30px 30px 30px 30px;
-        border-style:none;
-        }
-
-    ul#container li a:hover {
-            background: #707ED7;
-            color: #efebeb;
-            text-decoration: none;
-            padding: 30px 30px 30px 30px;
-        }
-    /*otrs*/
-    body
-{
-	text-align: center;
+nav ul#container li#third a:hover {
+    background: #ED6B9F;
+    color: #efebeb;
+    text-decoration: none;
+    padding: 30px 30px 30px 30px;
 }
-
-    ul#container2 {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50em;
-        text-align: left;
-}
-
-    ul#container2 li {       
-        float:left;
-        display: inline;
-        list-style: none;
-        padding-left: 15px;
-}
-
-    ul#container2 li a {
-        font-family: SourceSansPro;
-        font-size: 3em;
-        font-weight: 700;
-        background: #92EC00;
-        color: #efebeb;
-        text-decoration: none;
-        padding:30px 30px 30px 30px;
-        border-style:none;
-}
-
-    ul#container2 li a:hover {
-            background: #A1F43D;
-            color: #efebeb;
-            text-decoration: none;
-            padding: 30px 30px 30px 30px;
-        }
-    /*treshais*/
-
-    body
-{
-	text-align: center;
-}
-
-    ul#container3 {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50em;
-        text-align: left;
-}
-
-    ul#container3 li {     
-        float:left;
-        display: inline;
-        list-style: none;
-        padding-left: 15px;          
-    }
-
-    ul#container3 li a {
-        font-family: SourceSansPro;
-        font-size: 3em;
-        font-weight: 700;
-        background: #E93A90;
-        color: #efebeb;
-        text-decoration: none;
-        padding:30px 30px 30px 30px;
-        border-style:none;
-        }
-    
-    ul#container3 li a:hover {
-            background: #ED6B9F;
-            color: #efebeb;
-            text-decoration: none;
-            padding: 30px 30px 30px 30px;
-        }
-    /* display:block;  ljauj specificet width, menu icons should not exceed 16x16 px */
+/* display:block;  let specify width, menu icons should not exceed 16x16 px */
 /* page elements
 ----------------------------------------------------------*/
 /* featured */
@@ -364,22 +356,22 @@ ul#menu {
     /*background-image:url('/Content/themes/base/images/Wallpapers.jpg');*/
 }
 
-    .featured .content-wrapper {
-        float:left;
-        background-image: url('/Content/themes/base/images/Wallpapers.jpg');
-        /*background-color:#bbb4b4;*/
-        color: #3e5667;
-        padding: 0px 0px 500px 50px;
-        width:800px;
-    }
+.featured .content-wrapper {
+    float:left;
+    background-image: url('/Content/themes/base/images/Wallpapers.jpg');  /*here i can manage map frame*/
+    /*background-color:#bbb4b4;*/
+    color: #3e5667;
+    padding: 0px 50px 500px 50px;
+    width:800px;
+}
 
-        .featured hgroup.title h1, .featured hgroup.title h2 {
-            color: #fff;
-        }
+.featured hgroup.title h1, .featured hgroup.title h2 {
+    color: #fff;
+}
 
-        .featured p {
-            font-size: 1.1em;
-        }
+.featured p {
+    font-size: 1.1em;
+}
 /*featured1 for the home page/index - doesnt work.. dont change the background colour */
 
 .featured1 {
@@ -387,21 +379,21 @@ ul#menu {
     background-color: #363636;
 }
 
-    .featured1 .content-wrapper {
-        float:left;
-        background-color: #363636;
-        color: #3e5667;
-        padding: 0px 0px 500px 50px;
-        width:800px;
-    }
+.featured1 .content-wrapper {
+    float:left;
+    background-color: #363636;
+    color: #3e5667;
+    padding: 0px 0px 500px 50px;
+    width:800px;
+}
 
-        .featured1 hgroup.title h1, .featured1 hgroup.title h2 {
-            color: #fff;
-        }
+.featured1 hgroup.title h1, .featured1 hgroup.title h2 {
+    color: #fff;
+}
 
-        .featured1 p {
-            font-size: 1.1em;
-        }
+.featured1 p {
+    font-size: 1.1em;
+}
 
 /* page titles */
 hgroup.title {
@@ -430,50 +422,50 @@ ol.round {
     padding-left: 0;
 }
 
-    ol.round li {
-        margin: 25px 0;
-        padding-left: 45px;
-    }
+ol.round li {
+    margin: 25px 0;
+    padding-left: 45px;
+}
 
-        ol.round li.zero {
-            background: url("../Images/orderedList0.png") no-repeat;
-        }
+ol.round li.zero {
+    background: url("../Images/orderedList0.png") no-repeat;
+}
 
-        ol.round li.one {
-            background: url("../Images/orderedList1.png") no-repeat;
-        }
+ol.round li.one {
+    background: url("../Images/orderedList1.png") no-repeat;
+}
 
-        ol.round li.two {
-            background: url("../Images/orderedList2.png") no-repeat;
-        }
+ol.round li.two {
+    background: url("../Images/orderedList2.png") no-repeat;
+}
 
-        ol.round li.three {
-            background: url("../Images/orderedList3.png") no-repeat;
-        }
+ol.round li.three {
+    background: url("../Images/orderedList3.png") no-repeat;
+}
 
-        ol.round li.four {
-            background: url("../Images/orderedList4.png") no-repeat;
-        }
+ol.round li.four {
+    background: url("../Images/orderedList4.png") no-repeat;
+}
 
-        ol.round li.five {
-            background: url("../Images/orderedList5.png") no-repeat;
-        }
+ol.round li.five {
+    background: url("../Images/orderedList5.png") no-repeat;
+}
 
-        ol.round li.six {
-            background: url("../Images/orderedList6.png") no-repeat;
-        }
+ol.round li.six {
+    background: url("../Images/orderedList6.png") no-repeat;
+}
 
-        ol.round li.seven {
-            background: url("../Images/orderedList7.png") no-repeat;
-        }
+ol.round li.seven {
+    background: url("../Images/orderedList7.png") no-repeat;
+}
 
-        ol.round li.eight {
-            background: url("../Images/orderedList8.png") no-repeat;
-        }
+ol.round li.eight {
+    background: url("../Images/orderedList8.png") no-repeat;
+}
 
-        ol.round li.nine {
-            background: url("../Images/orderedList9.png") no-repeat;
-        }
+ol.round li.nine {
+    background: url("../Images/orderedList9.png") no-repeat;
+}
 
 /* content */
 article {
@@ -486,15 +478,15 @@ aside {
     width: 25%;
 }
 
-    aside ul {
-        list-style: none;
-        padding: 0;
-    }
+aside ul {
+    list-style: none;
+    padding: 0;
+}
 
-        aside ul li {
-            background: url("../Images/bullet.png") no-repeat 0 50%;
-            padding: 2px 0 2px 20px;
-        }
+aside ul li {
+    background: url("../Images/bullet.png") no-repeat 0 50%;
+    padding: 2px 0 2px 20px;
+}
 
 .label {
     font-weight: 700;
@@ -507,32 +499,32 @@ aside {
     width: 55%;
 }
 
-    #loginForm .validation-error {
-        display: block;
-        margin-left: 15px;
-    }
+#loginForm .validation-error {
+    display: block;
+    margin-left: 15px;
+}
 
-    #loginForm .validation-summary-errors ul {
-        margin: 0;
-        padding: 0;
-    }
+#loginForm .validation-summary-errors ul {
+    margin: 0;
+    padding: 0;
+}
 
-    #loginForm .validation-summary-errors li {
-        display: inline;
-        list-style: none;
-        margin: 0;
-    }
+#loginForm .validation-summary-errors li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+}
 
-    #loginForm input {
-        width: 250px;
-    }
+#loginForm input {
+    width: 250px;
+}
 
-    #loginForm input[type="checkbox"],
-    #loginForm input[type="submit"],
-    #loginForm input[type="button"],
-    #loginForm button {
-        width: auto;
-    }
+#loginForm input[type="checkbox"],
+#loginForm input[type="submit"],
+#loginForm input[type="button"],
+#loginForm button {
+    width: auto;
+}
 
 #socialLoginForm {
     margin-left: 40px;
@@ -540,9 +532,9 @@ aside {
     width: 40%;
 }
 
-    #socialLoginForm h2 {
-        margin-bottom:  5px;
-    }
+#socialLoginForm h2 {
+    margin-bottom:  5px;
+}
 
 #socialLoginList button {
     margin-bottom: 12px;
@@ -573,18 +565,18 @@ fieldset {
     padding: 0;
 }
 
-    fieldset legend {
-        display: none;
-    }
+fieldset legend {
+    display: none;
+}
 
-    fieldset ol {
-        padding: 0;
-        list-style: none;
-    }
+fieldset ol {
+    padding: 0;
+    list-style: none;
+}
 
-        fieldset ol li {
-            padding-bottom: 5px;
-        }
+fieldset ol li {
+    padding-bottom: 5px;
+}
 
 label {
     display: block;
@@ -611,36 +603,36 @@ textarea {
     width: 500px;
 }
 
-    input:focus, textarea:focus {
-        border: 1px solid #7ac0da;
-    }
+input:focus, textarea:focus {
+    border: 1px solid #7ac0da;
+}
 
-    input[type="checkbox"] {
-        background: transparent;
-        border: inherit;
-        width: auto;
-    }
+input[type="checkbox"] {
+    background: transparent;
+    border: inherit;
+    width: auto;
+}
 
-    input[type="submit"],
-    input[type="button"],
-    button {
-        background-color: #d3dce0;
-        border: 1px solid #787878;
-        cursor: pointer;
-        font-size: 1.2em;
-        font-weight: 600;
-        padding: 7px;
-        margin-right: 8px;
-        width: auto;
-    }
+input[type="submit"],
+input[type="button"],
+button {
+    background-color: #d3dce0;
+    border: 1px solid #787878;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 7px;
+    margin-right: 8px;
+    width: auto;
+}
 
-    td input[type="submit"],
-    td input[type="button"],
-    td button {
-        font-size: 1em;
-        padding: 4px;
-        margin-right: 4px;
-    }
+td input[type="submit"],
+td input[type="button"],
+td button {
+    font-size: 1em;
+    padding: 4px;
+    margin-right: 4px;
+}
 
 /* info and errors */
 .message-info {
@@ -713,41 +705,41 @@ th {
     padding-left: 0;
 }
 
-    th a {
-        display: block;
-        position: relative;
-    }
+th a {
+    display: block;
+    position: relative;
+}
 
-    th a:link, th a:visited, th a:active, th a:hover {
-        color: #333;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 0;
-    }
+th a:link, th a:visited, th a:active, th a:hover {
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0;
+}
 
-    th a:hover {
-        color: #000;
-    }
+th a:hover {
+    color: #000;
+}
 
-    th.asc a, th.desc a {
-        margin-right: .75em;
-    }
+th.asc a, th.desc a {
+    margin-right: .75em;
+}
 
-    th.asc a:after, th.desc a:after {
-        display: block;
-        position: absolute;
-        right: 0em;
-        top: 0;
-        font-size: 0.75em;
-    }
+th.asc a:after, th.desc a:after {
+    display: block;
+    position: absolute;
+    right: 0em;
+    top: 0;
+    font-size: 0.75em;
+}
 
-    th.asc a:after {
-        content: '▲';
-    }
+th.asc a:after {
+    content: '▲';
+}
 
-    th.desc a:after {
-        content: '▼';
-    }
+th.desc a:after {
+    content: '▼';
+}
 
 td {
     padding: 0.25em 2em 0.25em 0em;
@@ -784,29 +776,29 @@ tr.pager td {
         text-align: center;
     }
 
-        #login ul {
-            margin: 5px 0;
-            padding: 0;
-        }
+    #login ul {
+        margin: 5px 0;
+        padding: 0;
+    }
 
-        #login li {
-            display: inline;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    #login li {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-        #login a {
-            background: none;
-            color: #999;
-            font-weight: 600;
-            margin: 2px;
-            padding: 0;
-        }
+    #login a {
+        background: none;
+        color: #999;
+        font-weight: 600;
+        margin: 2px;
+        padding: 0;
+    }
 
-        #login a:hover {
-            color: #333;
-        }
+    #login a:hover {
+        color: #333;
+    }
 
     /* menu */
     nav {
@@ -819,10 +811,10 @@ tr.pager td {
         text-align: center;
     }
 
-        ul#menu li {
-            margin: 0;
-            padding: 0;
-        }
+    ul#menu li {
+        margin: 0;
+        padding: 0;
+    }
 
 
     /* main layout
@@ -853,23 +845,23 @@ tr.pager td {
         padding-left: 0;
     }
 
-        ol.round li {
-            padding-left: 10px;
-            margin: 25px 0;
-        }
+    ol.round li {
+        padding-left: 10px;
+        margin: 25px 0;
+    }
 
-            ol.round li.zero,
-            ol.round li.one,
-            ol.round li.two,
-            ol.round li.three,
-            ol.round li.four,
-            ol.round li.five,
-            ol.round li.six,
-            ol.round li.seven,
-            ol.round li.eight,
-            ol.round li.nine {
-                background: none;
-            }
+    ol.round li.zero,
+    ol.round li.one,
+    ol.round li.two,
+    ol.round li.three,
+    ol.round li.four,
+    ol.round li.five,
+    ol.round li.six,
+    ol.round li.seven,
+    ol.round li.eight,
+    ol.round li.nine {
+        background: none;
+    }
 
      /* features */
      section.feature {
@@ -878,12 +870,12 @@ tr.pager td {
         width: auto;
      }
 
-        section.feature img {
-            color: #999;
-            content: attr(alt);
-            font-size: 1.5em;
-            font-weight: 600;
-        }
+    section.feature img {
+        color: #999;
+        content: attr(alt);
+        font-size: 1.5em;
+        font-weight: 600;
+    }
 
     /* forms */
     input {
@@ -897,10 +889,10 @@ tr.pager td {
         width: auto;
     }
 
-        #loginForm .validation-error {
-            display: block;
-            margin-left: 15px;
-        }
+    #loginForm .validation-error {
+        display: block;
+        margin-left: 15px;
+    }
 
     #socialLoginForm {
         margin-left: 0;
@@ -922,7 +914,7 @@ tr.pager td {
         padding: 10px 0;
     }
 
-        footer p {
-            margin: 0;
-        }
+    footer p {
+        margin: 0;
+    }
 }
