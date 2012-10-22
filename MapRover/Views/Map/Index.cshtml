@@ -1,10 +1,19 @@
-﻿@{
+﻿41@{
     ViewBag.Title = "Index";
 }
-
+   <link href="Content/themes/select2.css" rel="stylesheet"/>
+    <script src="Scripts/select2.js"></script>
+    <script>
+        $(document).ready(function () { $("#e1").select2(); });
+    </script>
 @section RightBar {
     <h3>We suggest the following:</h3>
+        <select id="e1">
+        <option value="AL">Alabama</option>
+        <option value="WY">Wyoming</option>
+    </select>
     <ol class="round">
+
         <li class="one">
             <h5>Getting Started</h5>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
@@ -28,12 +37,14 @@
             <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
         </li>
     </ol>
+    
 }
 
 <hgroup class="title">
     <h1>Map of Europe</h1>
-    <h2>I like Sigita</h2>
 </hgroup>
 <p>
-    @Html.Partial("~/Views/Shared/MapControl.cshtml")    
+
+    @Html.Partial("~/Views/Shared/MapControl.cshtml")  
+      
 </p>

@@ -10,10 +10,12 @@ namespace MapRover.Models
     public class City
     {
         public int CityId { get; set; }
+        public int CountryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public int Population { get; set; }
         public double Size { get; set; }
+        public string Picture { get; set; }
         public List<Airport> Airports { get; set; }
         public List<ProductInCity> ProductsInCity { get; set; }
         public Country Country { get; set; }
