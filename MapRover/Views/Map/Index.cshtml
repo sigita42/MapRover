@@ -1,17 +1,18 @@
-﻿41@{
+﻿@{
     ViewBag.Title = "Index";
 }
-   <link href="Content/themes/select2.css" rel="stylesheet"/>
+    <link href="Content/select2.css" rel="stylesheet"/>
     <script src="Scripts/select2.js"></script>
     <script>
         $(document).ready(function () { $("#e1").select2(); });
     </script>
 @section RightBar {
-    <h3>We suggest the following:</h3>
-        <select id="e1">
+    <select id="e1">
         <option value="AL">Alabama</option>
         <option value="WY">Wyoming</option>
     </select>
+    <h3>We suggest the following:</h3>
+   
     <ol class="round">
 
         <li class="one">
@@ -37,7 +38,7 @@
             <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
         </li>
     </ol>
-    
+
 }
 
 <hgroup class="title">
