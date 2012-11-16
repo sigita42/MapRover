@@ -176,6 +176,7 @@
     <Compile Include="Models\Currency.cs" />
     <Compile Include="Models\Distance.cs" />
     <Compile Include="Models\ExchangeRate.cs" />
+    <Compile Include="Models\MapInitializer.cs" />
     <Compile Include="Models\MapRoverEntities.cs" />
     <Compile Include="Models\NeighbourCountry.cs" />
     <Compile Include="Models\Product.cs" />
@@ -184,6 +185,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\themes\base\images\Frankfurte.jpg" />
+    <Content Include="Content\themes\base\images\Parize.jpg" />
+    <Content Include="Content\themes\base\images\Riga1.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -197,6 +201,7 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\Vine.jpg" />
     <Content Include="Content\themes\base\images\Wallpapers.jpg" />
     <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\jquery.ui.accordion.css" />

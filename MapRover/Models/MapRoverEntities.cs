@@ -16,6 +16,6 @@ namespace MapRover.Models
         public DbSet<Distance> Distances { get; set; }
         public DbSet<NeighbourCountry> NeighbourCountries { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductInCity> ProductsInCities { get; set; }
+        public DbSet<ProductInCity> ProductInCities { get; set; }
     }
 }

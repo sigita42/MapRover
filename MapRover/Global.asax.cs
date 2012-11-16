@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Data.Entity;            // Database.SetInitialize
+using MapRover.Models;              // MovieInitializer
 
 namespace MapRover
 {
@@ -16,6 +18,7 @@ namespace MapRover
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<MapRoverEntities>(new MapInitializer());
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
