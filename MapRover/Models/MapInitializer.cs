@@ -154,12 +154,53 @@ namespace MapRover.Models
                               },
                  new Distance { IdCityA=3,   
                                 IdCityB=4,
-                                Value=3
+                                Value=3 
                               },
                  new Distance { IdCityA=4,   
                                 IdCityB=3,
                                 Value=3
                               },
+                 new Distance { IdCityA=1,   
+                                IdCityB=3,
+                                Value=3
+                              },
+                 new Distance { IdCityA=3,   
+                                IdCityB=1,
+                                Value=3
+                              },
+                 new Distance { IdCityA=1,   
+                                IdCityB=4,
+                                Value=3
+                              },
+                 new Distance { IdCityA=4,   
+                                IdCityB=1,
+                                Value=3
+                              },
+                 new Distance { IdCityA=4,   
+                                IdCityB=2,
+                                Value=4
+                              },
+                 new Distance { IdCityA=2,   
+                                IdCityB=4,
+                                Value=4
+                              },
+                 new Distance { IdCityA=1,   
+                                IdCityB=1,
+                                Value=0
+                              },
+                 new Distance { IdCityA=2,   
+                                IdCityB=2,
+                                Value=0
+                              },
+                 new Distance { IdCityA=3,   
+                                IdCityB=3,
+                                Value=0
+                              },
+                 new Distance { IdCityA=4,   
+                                IdCityB=4,
+                                Value=0
+                              },
+                            
             };
             Distances.ForEach(d => context.Distances.Add(d));
 
