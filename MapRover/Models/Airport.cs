@@ -13,5 +13,7 @@ namespace MapRover.Models
         public int CityId { get; set; }
         public string Name { get; set; }
         public City City { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
     }
 }

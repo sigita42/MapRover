@@ -82,27 +82,37 @@ namespace MapRover.Models
   
                  new Airport { Name = "Frankfurt International Airport", 
                             AirportId=1,
-                            CityId=1                      
+                            CityId=1, 
+                            Lat=50.033333,
+                            Lng=8.570556
                              },  
 
                  new Airport { Name = "Vienna International Airport", 
                             AirportId=2,
-                            CityId=2                      
+                            CityId=2, 
+                            Lat=48.110278,
+                            Lng=16.569722                      
                              }, 
   
                  new Airport { Name = "Riga International Airport", 
                             AirportId=3,
-                            CityId=3                      
+                            CityId=3, 
+                            Lat=56.923611,
+                            Lng=23.971111                      
                              },
 
                  new Airport { Name = "Paris-Charles de Gaulle Airport",  
                             AirportId=4,
-                            CityId=4                      
+                            CityId=4, 
+                            Lat=49.009722,
+                            Lng=2.547778                      
                              },
 
                  new Airport { Name = "Paris-Orly Airport",  
                             AirportId=5,
-                            CityId=4                      
+                            CityId=4, 
+                            Lat=48.723333,
+                            Lng=2.379444                      
                              },
              };
 
