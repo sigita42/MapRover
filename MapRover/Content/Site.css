@@ -35,6 +35,19 @@ body {
     margin: 0;
     padding:0px;
 }
+#pos
+{
+color:#363636;
+position:absolute;
+background-color:#bbb4b4;
+width: 50%;
+padding-left:40px;
+padding-right:40px;
+padding-bottom:40px;
+border:double;
+border-color:#4869D6;
+
+}
 
 #header h1 
 {
@@ -54,11 +67,12 @@ a {
 
 a:link, a:visited,
 a:active, a:hover {
-    color: #333;
+    color: #707ED7;
 }
 
 a:hover {
-    background-color: #c7d1d6;
+    background-color: #4869D6;
+    color:white;
 }
 
 header, footer, hgroup,
@@ -103,24 +117,29 @@ h4, h5, h6 {
 h1 {
     font-family: SourceSansProBold;
     font-size: 2em;
+    color:#c8c8c8;
 }
 
 h2 {
     font-size: 1.75em;
+    color:#363636/*#c8c8c8*/;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    color:#c8c8c8;
 }
 
 h4 {
     font-family: SourceSansProLight;
     font-size: 1.1em;
+    color:#c8c8c8;
 }
 
 h5, h6 {
     font-family: SourceSansProLight;
     font-size: 1em;
+    color:#c8c8c8;
 }
 
 h5 a:link, h5 a:visited, h5 a:active {
@@ -167,7 +186,7 @@ footer {
 /* site title
 ----------------------------------------------------------*/
 .site-title {
-    color: #c8c8c8;
+    color:#c8c8c8;
     font-family: SourceSansProBold;
     font-size: 2.3em;
     margin: 0;
@@ -181,7 +200,7 @@ footer {
 }
 .site-subtitle {
     float:left;
-    color: #c7d1d6;
+    color: #c8c8c8;
     font-family: SourceSansPro;
     font-size: 1.5em;
     margin: 0;
@@ -360,13 +379,13 @@ nav ul#container li#third a:hover {
     float:left;
     background-image: url('/Content/themes/base/images/Wallpapers.jpg');  /*here i can manage map frame*/
     /*background-color:#bbb4b4;*/
-    color: #3e5667;
+    color: #c8c8c8;
     padding: 0px 50px 500px 50px;
     width:800px;
 }
 
 .featured hgroup.title h1, .featured hgroup.title h2 {
-    color: #fff;
+    color: #c8c8c8;
 }
 
 .featured p {
@@ -474,8 +493,10 @@ article {
 }
 
 aside {
-    float: right;
-    width: 25%;
+    float: right;               /*About lapa mala esosas informacijas atrasanas vieta*/
+    width: 40%;
+    margin-right:-350px;
+
 }
 
 aside ul {
@@ -918,3 +939,4 @@ tr.pager td {
         margin: 0;
     }
 }
+

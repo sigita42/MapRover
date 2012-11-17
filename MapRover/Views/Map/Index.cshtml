@@ -9,7 +9,8 @@
     </script>  
 @section RightBar {
   
-    <h3>We suggest the following:</h3>
+    <h3>I am here:</h3>
+    <br/>
     <select id="e1">
         @{
             foreach (var City in Model.Cities.OrderBy(c => c.Name))
@@ -18,7 +19,7 @@
             }
         }
     </select>
-    @Html.DropDownList("e1", Model.Cities.OrderBy(c => c.Name).Select(c => new SelectListItem() { Text = c.Name, Value = c.CityId.ToString() }), new { id = "e1" });
+  
     <ol class="round">
         <li class="one">
             <h5>Getting Started</h5>
