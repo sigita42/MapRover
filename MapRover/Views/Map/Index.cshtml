@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MapRover.Models.ViewModels.MapInformation
+@{
     ViewBag.Title = "Index";
 }
     <link href="Content/select2.css" rel="stylesheet"/>
@@ -9,12 +10,16 @@
 @section RightBar {
   
     <h3>We suggest the following:</h3>
-      <select id="e1">
-        <option value="AL">Alabama</option>
-        <option value="WY">Wyoming</option>
+    <select id="e1">
+        @{
+            foreach (var City in Model.Cities.OrderBy(c => c.Name))
+            {
+                <option value="@City.CityId">@City.Name</option>
+            }
+        }
     </select>
+    @Html.DropDownList("e1", Model.Cities.OrderBy(c => c.Name).Select(c => new SelectListItem() { Text = c.Name, Value = c.CityId.ToString() }), new { id = "e1" });
     <ol class="round">
-
         <li class="one">
             <h5>Getting Started</h5>
             ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that

@@ -10,7 +10,8 @@ namespace MapRover.Models
         {
             var Cities = new List<City> {  
   
-                 new City { Name = "Frankfurt",   
+                 new City { Name = "Frankfurt", 
+                            CityId=1,
                             Description="Description of Frankfurt",   
                             Population=691518,  
                             Size=248.31,  
@@ -19,6 +20,7 @@ namespace MapRover.Models
                              },  
 
                      new City { Name = "Vienna ",   
+                             CityId=2,
                              Description="Description of Vienna",   
                              Population=1731236,  
                              Size=414.65,  
@@ -26,7 +28,8 @@ namespace MapRover.Models
                              CountryId=2 /*Country=Germny*/
                              },   
   
-                 new City { Name = "Riga",   
+                     new City { Name = "Riga", 
+                             CityId=3,
                              Description="Description of Riga",   
                              Population=699203,  
                              Size=307.17,  
@@ -34,7 +37,8 @@ namespace MapRover.Models
                              CountryId=3 
                             },   
 
-               new City{ Name = "Paris",   
+                     new City{ Name = "Paris", 
+                             CityId=4,
                              Description="Description of Paris",   
                              Population=2234105,  
                              Size=105.4,  
@@ -47,23 +51,27 @@ namespace MapRover.Models
 
         var Countries = new List<Country> {  
   
-                 new Country { Name = "Germany",   
-                            Cheers="Description of Frankfurt",   
+                 new Country { Name = "Germany",  
+                            CountryId=1,
+                            Cheers="Prost",   
                             CurrencyId=1,                         
                              },  
 
-                 new Country { Name = "Austria",   
-                            Cheers="Description of Frankfurt",   
+                 new Country { Name = "Austria", 
+                            CountryId=2,
+                            Cheers="Prost",   
                             CurrencyId=1,                         
                              }, 
   
-                 new Country { Name = "Riga",   
-                            Cheers="Description of Frankfurt",   
+                 new Country { Name = "Latvia", 
+                            CountryId=3,
+                            Cheers="Priekā",   
                             CurrencyId=2,                         
                              }, 
 
-                 new Country { Name = "France",   
-                            Cheers="Description of Frankfurt",   
+                 new Country { Name = "France", 
+                            CountryId=4,
+                            Cheers="Santé",   
                             CurrencyId=1,                         
                              }, 
              };
@@ -72,23 +80,28 @@ namespace MapRover.Models
 
             var Airports = new List<Airport> {  
   
-                 new Airport { Name = "Frankfurt International Airport",   
+                 new Airport { Name = "Frankfurt International Airport", 
+                            AirportId=1,
                             CityId=1                      
                              },  
 
-                 new Airport { Name = "Vienna International Airport",   
+                 new Airport { Name = "Vienna International Airport", 
+                            AirportId=2,
                             CityId=2                      
                              }, 
   
-                 new Airport { Name = "Riga International Airport",   
+                 new Airport { Name = "Riga International Airport", 
+                            AirportId=3,
                             CityId=3                      
                              },
 
-                 new Airport { Name = "Paris-Charles de Gaulle Airport",   
+                 new Airport { Name = "Paris-Charles de Gaulle Airport",  
+                            AirportId=4,
                             CityId=4                      
                              },
 
-                 new Airport { Name = "Paris-Orly Airport",   
+                 new Airport { Name = "Paris-Orly Airport",  
+                            AirportId=5,
                             CityId=4                      
                              },
              };
@@ -97,14 +110,14 @@ namespace MapRover.Models
 
             var Currencies = new List<Currency> {  
   
-                 new Currency { Name = "Euro",   
+                 new Currency { Name = "Euro",  
+                            CurrencyId=1,
                             Abbraviation="EUR",
-                            ExchangeRateId=1
                              },  
 
-                 new Currency { Name = "Lats",   
-                            Abbraviation="LS",
-                            ExchangeRateId=2                      
+                 new Currency { Name = "Lats",
+                            CurrencyId=2,
+                            Abbraviation="LVL",                      
                              },   
              };
 
@@ -112,7 +125,8 @@ namespace MapRover.Models
 
             var ExchangeRates = new List<ExchangeRate> {  
   
-                 new ExchangeRate { IdCurrencyA =2,   
+                 new ExchangeRate { 
+                            IdCurrencyA =2,   
                             IdCurrencyB=1,
                             Value=14372 
                              },   
@@ -151,23 +165,29 @@ namespace MapRover.Models
 
             var NeighbourCountries= new List<NeighbourCountry> {  
   
-                 new NeighbourCountry { Name="Germany"
+                 new NeighbourCountry { Name="Germany",
+                                        NeighbourCountryId=1
                              }, 
-                 new NeighbourCountry { Name="Austria"
+                 new NeighbourCountry { Name="Austria",
+                                        NeighbourCountryId=2
                              },
-                 new NeighbourCountry { Name="Latvia"
+                 new NeighbourCountry { Name="Latvia",
+                                        NeighbourCountryId=3
                              },
-                 new NeighbourCountry { Name="France"
+                 new NeighbourCountry { Name="France",
+                                        NeighbourCountryId=4
                              },
             };
             NeighbourCountries.ForEach(d => context.NeighbourCountries.Add(d));
 
             var Products = new List<Product> {  
   
-                 new Product { ProductName = "Bread",                            
+                 new Product { ProductName = "Bread", 
+                               ProductId=1      
                              },  
 
-                 new Product { ProductName = "Coke",                        
+                 new Product { ProductName = "Coke", 
+                               ProductId=2  
                              },   
              };
 
@@ -206,11 +226,10 @@ namespace MapRover.Models
                  new ProductInCity { ProductId = 2, 
                                      CityId=4,
                                      Price=1.8
-                             },
-
-            ProductInCities.ForEach(d => context.ProductInCities.Add(d)) ;
-
+                             }
             };
+
+            ProductInCities.ForEach(d => context.ProductInCities.Add(d));
         }
     }
 }

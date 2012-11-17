@@ -12,7 +12,7 @@ namespace MapRover.Models
         public int CurrencyId { get; set; }
         public string Name { get; set; }
         public string Abbraviation { get; set; }
-        public int ExchangeRateId { get; set; }
+        public List<ExchangeRate> ExchangeRates { get; set; }
         public List<Country> Countries { get; set; }
     }
 }

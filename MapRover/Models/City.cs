@@ -16,6 +16,7 @@ namespace MapRover.Models
         public int Population { get; set; }
         public double Size { get; set; }
         public string Picture { get; set; }
+        public List<Distance> Distances { get; set; }
         public List<Airport> Airports { get; set; }
         public List<ProductInCity> ProductsInCity { get; set; }
         public Country Country { get; set; }

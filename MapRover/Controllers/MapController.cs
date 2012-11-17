@@ -24,7 +24,7 @@ namespace MapRover.Controllers
                 Distances = _mapDB.Distances,
                 NeighbourCountries = _mapDB.NeighbourCountries,
                 Products = _mapDB.Products,
-                ProductsInCities = _mapDB.ProductsInCities
+                ProductsInCities = _mapDB.ProductInCities
             };
 
             return View(data);
