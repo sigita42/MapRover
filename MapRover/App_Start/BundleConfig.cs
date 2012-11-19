@@ -12,7 +12,9 @@ namespace MapRover
                         "~/Scripts/jquery-1.8.2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-1.8.20.js"));
+                        "~/Scripts/jquery-ui-1.8.20.js",
+                        "~/Scripts/jquery.capSlide.js",
+                        "~/Scripts/select2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -37,7 +39,8 @@ namespace MapRover
                         "~/Content/themes/base/jquery.ui.tabs.css",
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+                        "~/Content/themes/base/jquery.ui.theme.css",
+                        "~/Content/select2.css"));
         }
     }
 }

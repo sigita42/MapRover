@@ -16,7 +16,9 @@ namespace MapRover.Models
                             Population=691518,  
                             Size=248.31,  
                             Picture="Content/themes/base/images/Frankfurte.jpg",
-                            CountryId=1
+                            CountryId=1,
+                            Lat=50.111667,
+                            Lng=8.685833
                              },  
 
                      new City { Name = "Vienna ",   
@@ -25,7 +27,9 @@ namespace MapRover.Models
                              Population=1731236,  
                              Size=414.65,  
                              Picture="Content/themes/base/images/Vine.jpg",
-                             CountryId=2 /*Country=Germny*/
+                             CountryId=2, 
+                             Lat=48.208333, 
+                             Lng=16.373056
                              },   
   
                      new City { Name = "Riga", 
@@ -33,8 +37,10 @@ namespace MapRover.Models
                              Description="Description of Riga",   
                              Population=699203,  
                              Size=307.17,  
-                             Picture="Content/themes/base/images/Riga1.jpg",
-                             CountryId=3 
+                             Picture="Content/themes/base/images/Riga1-002.jpg",
+                             CountryId=3,
+                             Lat=56.948889, 
+                             Lng=24.106389
                             },   
 
                      new City{ Name = "Paris", 
@@ -43,7 +49,9 @@ namespace MapRover.Models
                              Population=2234105,  
                              Size=105.4,  
                              Picture="Content/themes/base/images/Parize.jpg",
-                             CountryId=4 
+                             CountryId=4,
+                             Lat=48.8567, 
+                             Lng=2.3508
                             },   
              };
 

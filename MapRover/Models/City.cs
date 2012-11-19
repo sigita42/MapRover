@@ -20,5 +20,7 @@ namespace MapRover.Models
         public List<Airport> Airports { get; set; }
         public List<ProductInCity> ProductsInCity { get; set; }
         public Country Country { get; set; }
+        public double Lat { get; set; }
+        public double Lng { get; set; }
     }
 }
