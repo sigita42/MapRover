@@ -16,65 +16,32 @@
 
             var image = "Content/themes/base/images/airport2.png";
             var infoWindow = new google.maps.InfoWindow();
-
-                var json = jQuery.parseJSON = [
-      {
-          "title": "London Heathrow Airport (LHR)",
-          "lat": 51.466841,
-          "lng": -0.45304,
-          "address": "Croydon Rd, Hillingdon, Greater London TW6 1GB, UK"
-      },
-      {
-          "title": "Paris-Charles de Gaulle Airport",
-          "lat": 49.010515,
-          "lng": 2.548287,
-          "address":"5 Rue du Cercle, 95700 Roissy-en-France, France 03 949"
-      },
-      {
-          "title": "Frankfurt International Airport",
-          "lat": 50.03884,
-          "lng": 8.558984,
-          "address": "Hugo-Eckener-Ring, 60549 Frankfurt, Germany 069 6900"
-      },
-      {
-          "title": "Frankfurt1",
-          "lat": 50.040000,
-          "lng": 8.558984,
-          "address": "Hugo-Eckener-Ring, 60549 Frankfurt, Germany 069 6900"
-      },
-      {
-          "title": "Frankfurt2",
-          "lat": 50.050000,
-          "lng": 8.558984,
-          "address": "Hugo-Eckener-Ring, 60549 Frankfurt, Germany 069 6900"
-      }
-                ]
-
             var mcOptions = { gridSize: 40, maxZoom: 15 };
             var markers = [];
-
-            for (var i = 0, length = json.length; i < length; i++) {
-                var data = json[i],
-                    latLng = new google.maps.LatLng(data.lat, data.lng);
-
-                // Creating a marker and putting it on the map
-                var marker = new google.maps.Marker({
-                    position: latLng,
-                    icon: image,
-                    map: map,
-                    title: data.title
-                });
-                markers.push(marker);
-
-                //Attaching a click event to the current marker
-                (function (marker, data) {
-                    google.maps.event.addListener(marker, "click", function (e) {
-                        infoWindow.setContent(data.title);
-                        infoWindow.open(map, marker);
+            
+            @foreach (var airport in Model)
+	        {
+                var culture = System.Globalization.CultureInfo.InvariantCulture;
+                <text>
+                    // Creating a marker and putting it on the map
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(@airport.Lat.ToString(culture), @airport.Lng.ToString(culture)),
+                        icon: image,
+                        map: map,
+                        title: "@airport.Name"
                     });
-                })(marker, data);
+                    markers.push(marker);
 
-            }
+                    //Attaching a click event to the current marker
+                    (function (marker) {
+                        google.maps.event.addListener(marker, "click", function (e) {
+                            infoWindow.setContent("@airport.Name");
+                            infoWindow.open(map, marker);
+                        });
+                    })(marker);
+                </text>
+	        }
+
             var mc = new MarkerClusterer(map, markers, mcOptions);
         }
  </script>

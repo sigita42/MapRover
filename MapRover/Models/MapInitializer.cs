@@ -112,7 +112,7 @@ namespace MapRover.Models
                  new Airport { Name = "Paris-Charles de Gaulle Airport",  
                             AirportId=4,
                             CityId=4, 
-                            Lat=49.009722,
+                            Lat=49.009722, 
                             Lng=2.547778                      
                              },
 
