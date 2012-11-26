@@ -17,6 +17,7 @@
             {
                 <option value="@City.CityId">@City.Name</option>
             }
+            
         }
     </select>
   
@@ -48,34 +49,31 @@
 }
 
 <hgroup class="title">
-    <h1>Map of Europe</h1>
+    <h3></h3>
 </hgroup>
-<link rel="stylesheet" type="text/css" href="Content/style.css" media="screen">
-<link rel="stylesheet" type="text/css" href="Content/Site.css">
+<div id="capslide_img_cont11" class="ic_container">
 
-                <div id="capslide_img_cont11" class="ic_container">
+@Html.Partial("~/Views/Shared/MapControl.cshtml", Model.Airports)  
 
-    @Html.Partial("~/Views/Shared/MapControl.cshtml", Model.Airports)  
+<div class="ic_caption">
 
-                    <div class="ic_caption">
+    <p class="ic_category">Some City X</p>
+    <p class="ic_image">  
+    </p>
 
-                        <p class="ic_category">Some City X</p>
-                        <p class="ic_image">  
-                        </p>
-
-                        <h3>Insight of the City</h3>
+    <h3>Insight of the City</h3>
                           
-                        <dl class="ic_text">
+    <dl class="ic_text">
 
-                            <dt>Size:</dt> 
-                            <dt>Population:</dt> 
-                            <dt>"Cheers":</dt> 
-                            <dt>Prices</dt>
-                            <dd>Bread:</dd> 
-                            <dd>Coke:</dd>
-                            <dt>Description:   Here is going to be a short description of each city and its insights. What can you discover here? Why it's a perfect place to visit?</dt>
-                        </dl> 
-                     </div>
+        <dt>Size:</dt> 
+        <dt>Population:</dt> 
+        <dt>"Cheers":</dt> 
+        <dt>Prices</dt>
+        <dd>Bread:</dd> 
+        <dd>Coke:</dd>
+        <dt>Description:   Here is going to be a short description of each city and its insights. What can you discover here? Why it's a perfect place to visit?</dt>
+    </dl> 
+</div>
 </div>            
 <script type="text/javascript">
     $(function () {
@@ -85,6 +83,14 @@
             overlay_bgcolor: '#4869D6',
             border: '5px solid #000',
             showcaption: true
+        });
+
+        autoHideFutureMarkers = true;
+        hideAllMarkers();
+
+        $('#citiesSelect').change(function () {
+            hideAllMarkers();
+            showMarkersForCity($('#citiesSelect').val());
         });
     });
 </script>
