@@ -9,7 +9,8 @@ namespace MapRover
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-1.8.2.js"));
+                        "~/Scripts/jquery-1.8.2.js",
+                        "~/Scripts/jquery-ui-1.9.1.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-1.8.20.js",
@@ -40,7 +41,8 @@ namespace MapRover
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css",
-                        "~/Content/select2.css"));
+                        "~/Content/select2.css",
+                        "~/Content/jquery-ui-1.9.1.css"));
         }
     }
 }

@@ -42,7 +42,7 @@
 .ui-autocomplete {
 	position: absolute;
 	top: 0; /* #8656 */
-	cursor: default;
+	cursor: default;     
 }
 
 /* workarounds */
@@ -185,9 +185,15 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
 .ui-selectable-helper { position: absolute; z-index: 100; border:1px dotted black; }
 
-.ui-slider { position: relative; text-align: left; }
+.ui-slider {
+    position:absolute;
+    width: 300px;
+    text-align: left;
+    bottom:800px;
+    left:690px;
+}
 .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
-.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0;}
 
 .ui-slider-horizontal { height: .8em; }
 .ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }

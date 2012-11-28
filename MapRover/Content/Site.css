@@ -612,17 +612,18 @@ label.checkbox {
 
 input, textarea {
     border: 1px solid #e2e2e2;
-    background: #fff;
-    color: #333;
-    font-size: 1.2em;
+    background: #fff/*#4869D6*/;
+    color: #787878;
+    font-size: 1.0em;
     margin: 5px 0 6px 0;
     padding: 5px;
-    width: 300px;
+    width: 200px;
 }
 
 textarea {
     font-family: inherit;
     width: 500px;
+    color:#fff;
 }
 
 input:focus, textarea:focus {

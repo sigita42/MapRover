@@ -568,7 +568,8 @@ $.Widget.prototype = {
 			$.data( element, this.widgetFullName, this );
 			this._on( this.element, {
 				remove: function( event ) {
-					if ( event.target === element ) {
+					if ( event.target === element 
+                    {
 						this.destroy();
 					}
 				}
