@@ -26,8 +26,9 @@
             $("#slider-range").slider({
                 range: true,
                 min: 0,
-                max: 500,
-                values: [75, 300],
+                max: 6000,
+                step:100,
+                values: [1000, 4000],
                 slide: function (event, ui) {
                     $("#amount").val(ui.values[0] + " km" + " - " + ui.values[1] + " km");
                 }
@@ -54,7 +55,7 @@
 @Html.Partial("~/Views/Shared/MapControl.cshtml", Model.Airports)  
 
 <div class="ic_caption">
-
+    <button type="button" onclick="fadeIn();" style="position:absolute; right:0px; top:10px; ">Slide</button>
     <p class="ic_category">Some City X</p>
     <p class="ic_image">  
     </p>

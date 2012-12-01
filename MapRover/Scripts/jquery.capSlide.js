@@ -1,4 +1,4 @@
-(function($) {
+(function(cl) {
 	$.fn.capslide = function(options) {
 		var opts = $.extend({}, $.fn.capslide.defaults, options);
 		return this.each(function() {
@@ -12,7 +12,8 @@
 			var w = _img.css('width');
 			var h = _img.css('height');
 			$('.ic_caption',$this).css({'color':o.caption_color,'background-color':o.caption_bgcolor,'bottom':'0px','width':w});
-			$('.overlay',$this).css('background-color',o.overlay_bgcolor);
+			$('.overlay', $this).css({
+			    'background-color': o.overlay_bgcolor});
 			$this.css({'width':w , 'height':h, 'border':o.border});
 			$this.hover(
 				function () {

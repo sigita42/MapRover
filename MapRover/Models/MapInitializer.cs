@@ -92,35 +92,40 @@ namespace MapRover.Models
                             AirportId=1,
                             CityId=1, 
                             Lat=50.033333,
-                            Lng=8.570556
-                             },  
+                            Lng=8.570556,
+                            webPage="http://www.frankfurt-airport.com"
+                            },
 
                  new Airport { Name = "Vienna International Airport", 
                             AirportId=2,
                             CityId=2, 
                             Lat=48.110278,
-                            Lng=16.569722                      
+                            Lng=16.569722,
+                            webPage="http://www.viennaairport.com"
                              }, 
   
                  new Airport { Name = "Riga International Airport", 
                             AirportId=3,
                             CityId=3, 
                             Lat=56.923611,
-                            Lng=23.971111                      
+                            Lng=23.971111,
+                            webPage="http://www.riga-airport.com/"
                              },
 
                  new Airport { Name = "Paris-Charles de Gaulle Airport",  
                             AirportId=4,
                             CityId=4, 
                             Lat=49.009722, 
-                            Lng=2.547778                      
+                            Lng=2.547778,
+                            webPage="http://www.aeroportsdeparis.fr"
                              },
 
                  new Airport { Name = "Paris-Orly Airport",  
                             AirportId=5,
                             CityId=4, 
                             Lat=48.723333,
-                            Lng=2.379444                      
+                            Lng=2.379444,
+                            webPage="http://www.aeroportsdeparis.fr"
                              },
              };
 
@@ -152,90 +157,22 @@ namespace MapRover.Models
 
             ExchangeRates.ForEach(d => context.ExchangeRates.Add(d));
 
-            var Distances = new List<Distance> {  
-  
-                 new Distance { IdCityA=1,   
-                                IdCityB=2,
-                                Value=1
-                              },  
-                 new Distance { IdCityA=2,   
-                                IdCityB=1,
-                                Value=1
-                              },
-                 new Distance { IdCityA=2,   
-                                IdCityB=3,
-                                Value=2
-                              },
-                 new Distance { IdCityA=3,   
-                                IdCityB=2,
-                                Value=2
-                              },
-                 new Distance { IdCityA=3,   
-                                IdCityB=4,
-                                Value=3 
-                              },
-                 new Distance { IdCityA=4,   
-                                IdCityB=3,
-                                Value=3
-                              },
-                 new Distance { IdCityA=1,   
-                                IdCityB=3,
-                                Value=3
-                              },
-                 new Distance { IdCityA=3,   
-                                IdCityB=1,
-                                Value=3
-                              },
-                 new Distance { IdCityA=1,   
-                                IdCityB=4,
-                                Value=3
-                              },
-                 new Distance { IdCityA=4,   
-                                IdCityB=1,
-                                Value=3
-                              },
-                 new Distance { IdCityA=4,   
-                                IdCityB=2,
-                                Value=4
-                              },
-                 new Distance { IdCityA=2,   
-                                IdCityB=4,
-                                Value=4
-                              },
-                 new Distance { IdCityA=1,   
-                                IdCityB=1,
-                                Value=0
-                              },
-                 new Distance { IdCityA=2,   
-                                IdCityB=2,
-                                Value=0
-                              },
-                 new Distance { IdCityA=3,   
-                                IdCityB=3,
-                                Value=0
-                              },
-                 new Distance { IdCityA=4,   
-                                IdCityB=4,
-                                Value=0
-                              },
-                            
-            };
-            Distances.ForEach(d => context.Distances.Add(d));
+            foreach (City cityA in Cities)
+            {
+                foreach (City cityB in Cities)
+                {
+                    if (cityA != cityB)
+                    {
+                        context.Distances.Add(new Distance(cityA, cityB));
+                    }
+                }
+            }
 
-            var NeighbourCountries= new List<NeighbourCountry> {  
-  
-                 new NeighbourCountry { Name="Germany",
-                                        NeighbourCountryId=1
-                             }, 
-                 new NeighbourCountry { Name="Austria",
-                                        NeighbourCountryId=2
-                             },
-                 new NeighbourCountry { Name="Latvia",
-                                        NeighbourCountryId=3
-                             },
-                 new NeighbourCountry { Name="France",
-                                        NeighbourCountryId=4
-                             },
+            var NeighbourCountries= new List<NeighbourCountry> {    
+                 new NeighbourCountry { IdCountryA = 1, IdCountryB = 2 },
+                 new NeighbourCountry { IdCountryA = 1, IdCountryB = 4 },
+                 new NeighbourCountry { IdCountryA = 2, IdCountryB = 1 },
+                 new NeighbourCountry { IdCountryA = 4, IdCountryB = 1 }
             };
             NeighbourCountries.ForEach(d => context.NeighbourCountries.Add(d));
 

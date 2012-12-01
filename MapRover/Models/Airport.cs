@@ -15,5 +15,6 @@ namespace MapRover.Models
         public City City { get; set; }
         public double Lat { get; set; }
         public double Lng { get; set; }
+        public string webPage { get; set; }
     }
 }
