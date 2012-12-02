@@ -189,12 +189,30 @@
     <Content Include="App_Data\aspnet-MapRover-20120827163908_log.ldf">
       <DependentUpon>aspnet-MapRover-20120827163908.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\MapRover.mdf" />
+    <Content Include="App_Data\MapRover_log.ldf">
+      <DependentUpon>MapRover.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\jquery-ui-1.9.2.css" />
     <Content Include="Content\jquery-ui-1.9.2.min.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\fonts\SourceSansPro\OFL.txt" />
+    <Content Include="Content\themes\base\images\airport.png" />
+    <Content Include="Content\themes\base\images\airport1.png" />
+    <Content Include="Content\themes\base\images\airport2.png" />
+    <Content Include="Content\themes\base\images\airport3.png" />
+    <Content Include="Content\themes\base\images\airport4.png" />
+    <Content Include="Content\themes\base\images\bg.png" />
+    <Content Include="Content\themes\base\images\codrops_back.png" />
+    <Content Include="Content\themes\base\images\contact.png" />
     <Content Include="Content\themes\base\images\Frankfurte.jpg" />
+    <Content Include="Content\themes\base\images\icon.png" />
+    <Content Include="Content\themes\base\images\panorama3.jpg" />
     <Content Include="Content\themes\base\images\Parize.jpg" />
+    <Content Include="Content\themes\base\images\Riga1-002.jpg" />
+    <Content Include="Content\themes\base\images\select2.png" />
+    <Content Include="Content\themes\base\images\select2x2.png" />
+    <Content Include="Content\themes\base\images\spinner.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
