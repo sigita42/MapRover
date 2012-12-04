@@ -55,7 +55,7 @@
 @Html.Partial("~/Views/Shared/MapControl.cshtml", Model.Airports)  
 
 <div class="ic_caption">
-    <button type="button" onclick="fadeIn();" style="position:absolute; right:0px; top:10px; ">Slide</button>
+    <button id="slideButton" type="button" style="position:absolute; right:0px; top:10px; ">Slide</button>
     <p class="ic_category">Some City X</p>
     <p class="ic_image">  
     </p>
@@ -81,7 +81,8 @@
             caption_bgcolor: '#000',
             overlay_bgcolor: '#4869D6',
             border: '5px solid #000',
-            showcaption: true
+            showcaption: true,
+            slideButton: $("#slideButton")
         });
 
         autoHideFutureMarkers = true;

@@ -1,4 +1,7 @@
-(function(cl) {
+var captionIsDown = true;
+var thisCaption = null;
+
+(function (cl) {
 	$.fn.capslide = function(options) {
 		var opts = $.extend({}, $.fn.capslide.defaults, options);
 		return this.each(function() {
@@ -14,29 +17,59 @@
 			$('.ic_caption',$this).css({'color':o.caption_color,'background-color':o.caption_bgcolor,'bottom':'0px','width':w});
 			$('.overlay', $this).css({
 			    'background-color': o.overlay_bgcolor});
-			$this.css({'width':w , 'height':h, 'border':o.border});
-			$this.hover(
-				function () {
-					if((navigator.appVersion).indexOf('MSIE 7.0') > 0)
-					$('.overlay',$(this)).show();
-					else
-					$('.overlay',$(this)).fadeIn();
-					if(!o.showcaption)
-						$(this).find('.ic_caption').slideDown(500);
-					else
-						$('.ic_text',$(this)).slideDown(500);	
-				},
-				function () {
-					if((navigator.appVersion).indexOf('MSIE 7.0') > 0)
-					$('.overlay',$(this)).hide();
-					else
-					$('.overlay',$(this)).fadeOut();
-					if(!o.showcaption)
-						$(this).find('.ic_caption').slideUp(200);
-					else
-						$('.ic_text',$(this)).slideUp(200);
-				}
-			);
+			$this.css({ 'width': w, 'height': h, 'border': o.border });
+
+			if (opts.slideButton != null) {
+			    thisCaption = $this;
+			    opts.slideButton.click(
+                    function () {
+                        if (captionIsDown) {
+                            if ((navigator.appVersion).indexOf('MSIE 7.0') > 0)
+                                $('.overlay', thisCaption).show();
+                            else
+                                $('.overlay', thisCaption).fadeIn();
+                            if (!o.showcaption)
+                                thisCaption.find('.ic_caption').slideDown(500);
+                            else
+                                $('.ic_text', thisCaption).slideDown(500);
+                        } else {
+                            if ((navigator.appVersion).indexOf('MSIE 7.0') > 0)
+                                $('.overlay', thisCaption).hide();
+                            else
+                                $('.overlay', thisCaption).fadeOut();
+                            if (!o.showcaption)
+                                thisCaption.find('.ic_caption').slideUp(200);
+                            else
+                                $('.ic_text', thisCaption).slideUp(200);
+                        }
+
+                        captionIsDown = !captionIsDown;
+                    }
+                );
+			} else {
+			    $this.hover(
+                    function () {
+                        if ((navigator.appVersion).indexOf('MSIE 7.0') > 0)
+                            $('.overlay', $(this)).show();
+                        else
+                            $('.overlay', $(this)).fadeIn();
+                        if (!o.showcaption)
+                            $(this).find('.ic_caption').slideDown(500);
+                        else
+                            $('.ic_text', $(this)).slideDown(500);
+                    },
+                    function () {
+                        if ((navigator.appVersion).indexOf('MSIE 7.0') > 0)
+                            $('.overlay', $(this)).hide();
+                        else
+                            $('.overlay', $(this)).fadeOut();
+                        if (!o.showcaption)
+                            $(this).find('.ic_caption').slideUp(200);
+                        else
+                            $('.ic_text', $(this)).slideUp(200);
+                    }
+                );
+			}
 		});
 	};
 	$.fn.capslide.defaults = {

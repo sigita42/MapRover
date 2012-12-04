@@ -13,7 +13,7 @@
     var autoHideFutureMarkers = false;
 
     function initialize() {
-        var mapOptions = {
+        var mapOptions = {            
             zoom: 4,
             center: new google.maps.LatLng(51.333333, 12.383333),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -43,9 +43,7 @@
 
         var mc = new MarkerClusterer(map, markers, mcOptions);
     }
-
-        
-    
+  
     function createMarker(title, lat, lng) {
         var image = "Content/themes/base/images/airport2.png";
 
