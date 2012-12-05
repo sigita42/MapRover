@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
+<link rel="stylesheet" type="text/css" href="Content/CheckBox.css">
     <script>
         $(document).ready(function () { $("#citiesSelect").select2(); });
     </script>
@@ -11,7 +12,7 @@
  
     <h3>I am here:</h3>
     <br/>
-    <select id="citiesSelect">
+    <select id="citiesSelect" style="margin-bottom:15px;">
         @{
             foreach (var City in Model.Cities.OrderBy(c => c.Name))
             {
@@ -19,8 +20,7 @@
             }           
         }
     </select>
-
-      <h3>Choose the distance of destination:</h3>
+      <h3 style="position:absolute; left:885px; top:250px ">Choose the distance of destination:</h3>
     <script>
         $(function () {
             $("#slider-range").slider({
@@ -31,6 +31,7 @@
                 values: [1000, 4000],
                 slide: function (event, ui) {
                     $("#amount").val(ui.values[0] + " km" + " - " + ui.values[1] + " km");
+                    showMarkersForRange(ui.values[0], ui.values[1]);
                 }
             });
             $("#amount").val($("#slider-range").slider("values", 0) + " km" +
@@ -39,11 +40,20 @@
     </script>
 
 <p>
-    <input type="text" id="amount" style="border: 0; color: #403b3b; position:absolute; top:370px;
+    <input type="text" id="amount" style="border: 0; color: #403b3b; position:absolute; top:290px;
     margin-left:700px; left:225px" />
 </p>
  
-<div id="slider-range" style="position:absolute; top:420px; left:880px"></div>
+<div id="slider-range" style="position:absolute; top:340px; left:880px"></div>
+
+<div id="sizer" style="position: absolute; top:410px; left:870px; text-align:left;">
+    <form action="#" method="get" accept-charset="utf-8">
+        <fieldset class="checkboxes">
+            <label class="label_check" for="checkbox-01" style="color:#c8c8c8;"><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked="" /> Show me places out of my current country</label>
+            <label class="label_check" for="checkbox-02" style="color:#c8c8c8;"><input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox"> Show me places out of the neighbour countries</label>
+        </fieldset>
+    </form>
+</div>
     
 }
 
@@ -92,6 +102,35 @@
             hideAllMarkers();
             showMarkersForCity($('#citiesSelect').val());
         });
+    });
+</script>
+
+
+<script>
+    function setupLabel() {
+        if ($('.label_check input').length) {
+            $('.label_check').each(function () {
+                $(this).removeClass('c_on');
+            });
+            $('.label_check input:checked').each(function () {
+                $(this).parent('label').addClass('c_on');
+            });
+        };
+        if ($('.label_radio input').length) {
+            $('.label_radio').each(function () {
+                $(this).removeClass('r_on');
+            });
+            $('.label_radio input:checked').each(function () {
+                $(this).parent('label').addClass('r_on');
+            });
+        };
+    };
+    $(document).ready(function () {
+        $('body').addClass('has-js');
+        $('.label_check, .label_radio').click(function () {
+            setupLabel();
+        });
+        setupLabel();
     });
 </script>
 
