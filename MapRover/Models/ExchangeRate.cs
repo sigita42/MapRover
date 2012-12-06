@@ -17,7 +17,7 @@ namespace MapRover.Models
         [Key]
         [Column(Order=1)]
         public int IdCurrencyB { get; set; }
-        public decimal Value { get; set; }
+        public string Value { get; set; }
         public Currency CurrencyA { get; set; }
         public Currency CurrencyB { get; set; }
 

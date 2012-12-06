@@ -189,10 +189,6 @@
     <Content Include="App_Data\aspnet-MapRover-20120827163908_log.ldf">
       <DependentUpon>aspnet-MapRover-20120827163908.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\MapRover.mdf" />
-    <Content Include="App_Data\MapRover_log.ldf">
-      <DependentUpon>MapRover.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\jquery-ui-1.9.2.css" />
     <Content Include="Content\jquery-ui-1.9.2.min.css" />
     <Content Include="Content\style.css" />

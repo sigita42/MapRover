@@ -52,7 +52,62 @@ namespace MapRover.Models
                              CountryId=4,
                              Lat=48.8567, 
                              Lng=2.3508
-                            },   
+                            },
+   
+                     new City{ Name = "Madrid", 
+                             CityId=5,
+                             Description="Description of Madrid",   
+                             Population= 3265038,  
+                             Size= 605.77,  
+                             Picture="Content/themes/base/images/Madride.jpg",
+                             CountryId=5,
+                             Lat=40.383333, 
+                             Lng=-3.716667
+                            },
+
+                     new City{ Name = "Moscow", 
+                             CityId=6,
+                             Description="Description of Moscow",   
+                             Population= 11503501,  
+                             Size= 2510.00,  
+                             Picture="Content/themes/base/images/Moscow.jpg",
+                             CountryId=6,
+                             Lat=55.75, 
+                             Lng=37.616667
+                            },
+
+                     new City{ Name = "Rome", 
+                             CityId=7,
+                             Description="Description of Rome",   
+                             Population= 2777979,  
+                             Size= 1285.31,  
+                             Picture="Content/themes/base/images/Rome.jpg",
+                             CountryId=7,
+                             Lat=41.9, 
+                             Lng=12.5
+                            },
+
+                     new City{ Name = "Oslo", 
+                             CityId=8,
+                             Description="Description of Oslo",   
+                             Population= 1020000,  
+                             Size= 454.03,  
+                             Picture="Content/themes/base/images/Oslo.jpg",
+                             CountryId=8,
+                             Lat=59.949444, 
+                             Lng=10.756389
+                            },
+
+                     new City{ Name = "Barcelona", 
+                             CityId=9,
+                             Description="Description of Barcelona",   
+                             Population= 1621537,  
+                             Size= 803.00,  
+                             Picture="Content/themes/base/images/Barcelona.jpg",
+                             CountryId=5,
+                             Lat=41.383333, 
+                             Lng=62.183333
+                            },
              };
 
             Cities.ForEach(d => context.Cities.Add(d));
@@ -82,6 +137,30 @@ namespace MapRover.Models
                             Cheers="Santé",   
                             CurrencyId=1,                         
                              }, 
+
+                 new Country { Name = "Spain", 
+                            CountryId=5,
+                            Cheers="Santé",   
+                            CurrencyId=1,                         
+                             }, 
+
+                 new Country { Name = "Russia", 
+                            CountryId=6,
+                            Cheers="Santé",   
+                            CurrencyId=4,                         
+                             }, 
+
+                 new Country { Name = "Italy", 
+                            CountryId=7,
+                            Cheers="Santé",   
+                            CurrencyId=1,                         
+                             }, 
+
+                 new Country { Name = "Norway", 
+                            CountryId=8,
+                            Cheers="Santé",   
+                            CurrencyId=3,                         
+                             },  
              };
 
             Countries.ForEach(d => context.Countries.Add(d));
@@ -120,12 +199,44 @@ namespace MapRover.Models
                             webPage="http://www.aeroportsdeparis.fr"
                              },
 
-                 new Airport { Name = "Paris-Orly Airport",  
+                 new Airport { Name = "Barajas Airport",  
                             AirportId=5,
-                            CityId=4, 
-                            Lat=48.723333,
-                            Lng=2.379444,
-                            webPage="http://www.aeroportsdeparis.fr"
+                            CityId=5, 
+                            Lat=40.472222,
+                            Lng=-3.560833,
+                            webPage="..."
+                             },
+
+                 new Airport { Name = "Domodedovo International Airport",  
+                            AirportId=6,
+                            CityId=6, 
+                            Lat=55.408611,
+                            Lng=37.906111,
+                            webPage="..."
+                             },
+
+                 new Airport { Name = "Leonardo da Vinci–Fiumicino Airport",  
+                            AirportId=7,
+                            CityId=7, 
+                            Lat=41.800278,
+                            Lng=12.238889,
+                            webPage="..."
+                             },
+
+                 new Airport { Name = "Oslo-Gardermoen Airport",  
+                            AirportId=8,
+                            CityId=8, 
+                            Lat=60.202778,
+                            Lng=11.083889,
+                            webPage="..."
+                             },
+
+                 new Airport { Name = "Barcelona El Prat Airport",  
+                            AirportId=9,
+                            CityId=9, 
+                            Lat=41.296944,
+                            Lng=2.078333,
+                            webPage="..."
                              },
              };
 
@@ -141,7 +252,17 @@ namespace MapRover.Models
                  new Currency { Name = "Lats",
                             CurrencyId=2,
                             Abbraviation="LVL",                      
-                             },   
+                             },  
+ 
+                 new Currency { Name = "Norwegian Krone",
+                            CurrencyId=3,
+                            Abbraviation="NOK",                      
+                             },
+
+                 new Currency { Name = "Russian Ruble",
+                            CurrencyId=4,
+                            Abbraviation="RUB",                      
+                             },
              };
 
             Currencies.ForEach(d => context.Currencies.Add(d));
@@ -151,8 +272,20 @@ namespace MapRover.Models
                  new ExchangeRate { 
                             IdCurrencyA =2,   
                             IdCurrencyB=1,
-                            Value=14372 
-                             },   
+                            Value="1 Euro = 0.6962 Latvian Lati"
+                             },  
+ 
+                 new ExchangeRate { 
+                            IdCurrencyA =3,   
+                            IdCurrencyB=1,
+                            Value="1 Euro = 7.3535 Norwegian Krone" 
+                             },
+
+                 new ExchangeRate { 
+                            IdCurrencyA =4,   
+                            IdCurrencyB=1,
+                            Value="1 Euro = 40.3112 Russian Ruble" 
+                             },
              };
 
             ExchangeRates.ForEach(d => context.ExchangeRates.Add(d));
@@ -172,7 +305,15 @@ namespace MapRover.Models
                  new NeighbourCountry { IdCountryA = 1, IdCountryB = 2 },
                  new NeighbourCountry { IdCountryA = 1, IdCountryB = 4 },
                  new NeighbourCountry { IdCountryA = 2, IdCountryB = 1 },
-                 new NeighbourCountry { IdCountryA = 4, IdCountryB = 1 }
+                 new NeighbourCountry { IdCountryA = 2, IdCountryB = 7 },
+                 new NeighbourCountry { IdCountryA = 3, IdCountryB = 6 },
+                 new NeighbourCountry { IdCountryA = 4, IdCountryB = 1 },
+                 new NeighbourCountry { IdCountryA = 4, IdCountryB = 5 },
+                 new NeighbourCountry { IdCountryA = 4, IdCountryB = 7 },
+                 new NeighbourCountry { IdCountryA = 5, IdCountryB = 4 },
+                 new NeighbourCountry { IdCountryA = 6, IdCountryB = 3 },
+                 new NeighbourCountry { IdCountryA = 7, IdCountryB = 2 },
+                 new NeighbourCountry { IdCountryA = 7, IdCountryB = 4 },
             };
             NeighbourCountries.ForEach(d => context.NeighbourCountries.Add(d));
 
@@ -207,6 +348,26 @@ namespace MapRover.Models
                                      CityId=4,
                                      Price=1.1
                              },
+                 new ProductInCity { ProductId = 1, 
+                                     CityId=5,
+                                     Price=1.1
+                             },
+                 new ProductInCity { ProductId = 1, 
+                                     CityId=6,
+                                     Price=1.1
+                             },
+                 new ProductInCity { ProductId = 1, 
+                                     CityId=7,
+                                     Price=1.1
+                             },
+                 new ProductInCity { ProductId = 1, 
+                                     CityId=8,
+                                     Price=1.1
+                             },
+                 new ProductInCity { ProductId = 1, 
+                                     CityId=9,
+                                     Price=1.1
+                             },
                  new ProductInCity { ProductId = 2, 
                                      CityId=1,
                                      Price=2.1
@@ -222,7 +383,27 @@ namespace MapRover.Models
                  new ProductInCity { ProductId = 2, 
                                      CityId=4,
                                      Price=1.8
-                             }
+                             },
+                 new ProductInCity { ProductId = 2, 
+                                     CityId=5,
+                                     Price=1.8
+                             },
+                 new ProductInCity { ProductId = 2, 
+                                     CityId=6,
+                                     Price=1.8
+                             },
+                 new ProductInCity { ProductId = 2, 
+                                     CityId=7,
+                                     Price=1.8
+                             },
+                 new ProductInCity { ProductId = 2, 
+                                     CityId=8,
+                                     Price=1.8
+                             },
+                 new ProductInCity { ProductId = 2, 
+                                     CityId=9,
+                                     Price=1.8
+                             },
             };
 
             ProductInCities.ForEach(d => context.ProductInCities.Add(d));

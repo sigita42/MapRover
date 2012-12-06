@@ -22,7 +22,40 @@
     </select>
       <h3 style="position:absolute; left:885px; top:250px ">Choose the distance of destination:</h3>
     <script>
+        var currentCity = -1;
+        var distances = {};
+        function showVisibleMarkers(minRange, maxRange) {
+            hideAllMarkers();
+            showMarkersForCity(currentCity);
+            showMarkersForRange(minRange, maxRange);
+        }
+
+        function showMarkersForRange(minRange, maxRange) {
+            for(var i = 0; i < distances[currentCity].length; i++) {
+                var distance = distances[currentCity][i].distance;
+
+                if (distance >= minRange && distance <= maxRange) {
+                    showMarkersForCity(distances[currentCity][i].target);
+                }
+            }
+        }
+
         $(function () {
+            @foreach (var city in Model.Cities)
+            { 
+                <text>
+            distances[@city.CityId] = [];
+            </text>
+            }
+
+            @foreach (var distance in Model.Distances)
+            {
+                var culture = System.Globalization.CultureInfo.InvariantCulture;
+                <text>
+            distances[@distance.CityA.CityId].push({ target: @distance.CityB.CityId, distance: @distance.Value.ToString(culture) });
+                </text>
+            }
+            
             $("#slider-range").slider({
                 range: true,
                 min: 0,
@@ -31,11 +64,13 @@
                 values: [1000, 4000],
                 slide: function (event, ui) {
                     $("#amount").val(ui.values[0] + " km" + " - " + ui.values[1] + " km");
-                    showMarkersForRange(ui.values[0], ui.values[1]);
+                    showVisibleMarkers(ui.values[0], ui.values[1]);
                 }
             });
             $("#amount").val($("#slider-range").slider("values", 0) + " km" +
-                " - " + $("#slider-range").slider("values", 1)+ " km");
+                " - " + $("#slider-range").slider("values", 1) + " km");
+            currentCity = $('#citiesSelect').val();
+            showVisibleMarkers($("#slider-range").slider("values", 0), $("#slider-range").slider("values", 1));
         });
     </script>
 
@@ -100,7 +135,8 @@
 
         $('#citiesSelect').change(function () {
             hideAllMarkers();
-            showMarkersForCity($('#citiesSelect').val());
+            currentCity = $('#citiesSelect').val();
+            showVisibleMarkers($("#slider-range").slider("values", 0), $("#slider-range").slider("values", 1));
         });
     });
 </script>
