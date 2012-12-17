@@ -3,28 +3,32 @@
     ViewBag.Title = "Index";
 }
 <link rel="stylesheet" type="text/css" href="Content/CheckBox.css">
-    <script>
-        $(document).ready(function () { $("#citiesSelect").select2(); });
-    </script>
-   
- 
+<script>
+    $(document).ready(function () { $("#citiesSelect").select2(); });
+</script>
+
 @section RightBar {
- 
+
     <h3>I am here:</h3>
-    <br/>
-    <select id="citiesSelect" style="margin-bottom:15px;">
-        @{
-            foreach (var City in Model.Cities.OrderBy(c => c.Name))
-            {
-                <option value="@City.CityId">@City.Name</option>
-            }           
+    <br />
+    <select id="citiesSelect" style="margin-bottom: 15px;">
+        @foreach (var City in Model.Cities.OrderBy(c => c.Name))
+        {
+            <option value="@City.CityId">@City.Name</option>
         }
     </select>
-      <h3 style="position:absolute; left:885px; top:250px ">Choose the distance of destination:</h3>
+    <h3 style="position: absolute; left: 885px; top: 250px">Choose the distance of destination:</h3>
     <script>
-        var currentCity = -1;
+        var currentCity = -1, currentCountry = -1;
         var distances = {};
+        var neighbours = {};
+        var cityCountry = {};
+        var cities = {};
+        var showOnlyForeignCountries = false;
+        var hideNeighbours = false;
+
         function showVisibleMarkers(minRange, maxRange) {
+            currentCountry = cityCountry[currentCity];
             hideAllMarkers();
             showMarkersForCity(currentCity);
             showMarkersForRange(minRange, maxRange);
@@ -34,28 +38,57 @@
             for(var i = 0; i < distances[currentCity].length; i++) {
                 var distance = distances[currentCity][i].distance;
 
-                if (distance >= minRange && distance <= maxRange) {
+                if (distance >= minRange && distance <= maxRange && considerFurtherChecks(distances[currentCity][i].target)) {
                     showMarkersForCity(distances[currentCity][i].target);
                 }
             }
         }
 
-        $(function () {
-            @foreach (var city in Model.Cities)
-            { 
-                <text>
-            distances[@city.CityId] = [];
-            </text>
+        function considerFurtherChecks(city) {
+            var country = cityCountry[city];
+
+            if (showOnlyForeignCountries) {
+                if (currentCountry == country)
+                    return false;
             }
 
-            @foreach (var distance in Model.Distances)
+            if (hideNeighbours) {
+                if (neighbours[currentCountry].indexOf(country) >= 0)
+                    return false;
+            }
+
+            return true;
+        }
+
+        function displayAdditionalInfoForCity(city) {
+            $('#cityName').text(cities[city].name);
+            $('#citySize').text(cities[city].size);
+            $('#cityPopulation').text(cities[city].population);
+            $('#cityDescription').text(cities[city].description);
+            $('#cityPicture').css({ "background-image": cities[city].img_src });
+        }
+
+        $(function () {
+            @foreach (var city in Model.Cities)
             {
                 var culture = System.Globalization.CultureInfo.InvariantCulture;
                 <text>
-            distances[@distance.CityA.CityId].push({ target: @distance.CityB.CityId, distance: @distance.Value.ToString(culture) });
-                </text>
+            distances[@city.CityId] = [];
+            neighbours[@city.CityId] = [];
+            cityCountry[@city.CityId] = @city.CountryId;
+            cities[@city.CityId] = { name: '@city.Name', description: '@city.Description', size: @city.Size.ToString(culture), population: @city.Population, img_src: "@city.Picture" };
+            </text>
             }
-            
+            @foreach (var distance in Model.Distances)
+            {
+                var culture = System.Globalization.CultureInfo.InvariantCulture;
+                <text>distances[@distance.CityA.CityId].push({ target: @distance.CityB.CityId, distance: @distance.Value.ToString(culture) });</text>
+            }
+            @foreach (var neighbour in Model.NeighbourCountries)
+            {
+                <text>neighbours[@neighbour.IdCountryA].push(@neighbour.IdCountryB);</text>
+            }
+
             $("#slider-range").slider({
                 range: true,
                 min: 0,
@@ -71,54 +104,63 @@
                 " - " + $("#slider-range").slider("values", 1) + " km");
             currentCity = $('#citiesSelect').val();
             showVisibleMarkers($("#slider-range").slider("values", 0), $("#slider-range").slider("values", 1));
+
+            $('#chkOnlyForeignCountries').click(function() {
+                showOnlyForeignCountries = this.checked;
+                showVisibleMarkers($("#slider-range").slider("values", 0), $("#slider-range").slider("values", 1));
+            });
+
+            $('#chkHideNeighbours').click(function() {
+                hideNeighbours = this.checked;
+                showVisibleMarkers($("#slider-range").slider("values", 0), $("#slider-range").slider("values", 1));
+            });
         });
     </script>
 
-<p>
-    <input type="text" id="amount" style="border: 0; color: #403b3b; position:absolute; top:290px;
-    margin-left:700px; left:225px" />
-</p>
- 
-<div id="slider-range" style="position:absolute; top:340px; left:880px"></div>
+    <p>
+        <input type="text" id="amount" style="border: 0; color: #403b3b; position: absolute; top: 290px; margin-left: 700px; left: 225px" />
+    </p>
 
-<div id="sizer" style="position: absolute; top:410px; left:870px; text-align:left;">
-    <form action="#" method="get" accept-charset="utf-8">
-        <fieldset class="checkboxes">
-            <label class="label_check" for="checkbox-01" style="color:#c8c8c8;"><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked="" /> Show me places out of my current country</label>
-            <label class="label_check" for="checkbox-02" style="color:#c8c8c8;"><input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox"> Show me places out of the neighbour countries</label>
-        </fieldset>
-    </form>
-</div>
-    
+    <div id="slider-range" style="position: absolute; top: 340px; left: 880px"></div>
+
+    <div id="sizer" style="position: absolute; top: 410px; left: 870px; text-align: left;">
+        <form action="#" method="get" accept-charset="utf-8">
+            <fieldset class="checkboxes">
+                <label class="label_check" for="chkOnlyForeignCountries" style="color: #c8c8c8;">
+                    <input name="chkOnlyForeignCountries" id="chkOnlyForeignCountries" value="1" type="checkbox" />Hide other places in my current country</label>
+                <label class="label_check" for="chkHideNeighbours" style="color: #c8c8c8;">
+                    <input name="chkHideNeighbours" id="chkHideNeighbours" value="1" type="checkbox">
+                    Hide neighbour countries</label>
+            </fieldset>
+        </form>
+    </div>
+
 }
 
 <hgroup class="title">
     <h3></h3>
 </hgroup>
 <div id="capslide_img_cont11" class="ic_container">
+    @Html.Partial("~/Views/Shared/MapControl.cshtml", Model.Airports)
+    <div class="ic_caption">
+        <button id="slideButton" type="button" style="position: absolute; right: 0px; top: 10px;">Slide</button>
+        <p class="ic_category" id="cityName">Some City X</p>
+        <p class="ic_image" id="cityPicture">
+        </p>
 
-@Html.Partial("~/Views/Shared/MapControl.cshtml", Model.Airports)  
+        <h3>Insight of the City</h3>
 
-<div class="ic_caption">
-    <button id="slideButton" type="button" style="position:absolute; right:0px; top:10px; ">Slide</button>
-    <p class="ic_category">Some City X</p>
-    <p class="ic_image">  
-    </p>
-
-    <h3>Insight of the City</h3>
-                          
-    <dl class="ic_text">
-
-        <dt>Size:</dt> 
-        <dt>Population:</dt> 
-        <dt>"Cheers":</dt> 
-        <dt>Prices</dt>
-        <dd>Bread:</dd> 
-        <dd>Coke:</dd>
-        <dt>Description:   Here is going to be a short description of each city and its insights. What can you discover here? Why it's a perfect place to visit?</dt>
-    </dl> 
+        <dl class="ic_text">
+            <dt>Size:</dt>
+            <dd id="citySize" />
+            km²
+            <dt>Population:</dt>
+            <dd id="cityPopulation" />
+            <dt>Description:</dt>
+            <dd id="cityDescription" />
+        </dl>
+    </div>
 </div>
-</div>            
 <script type="text/javascript">
     $(function () {
         $("#capslide_img_cont11").capslide({
@@ -140,7 +182,6 @@
         });
     });
 </script>
-
 
 <script>
     function setupLabel() {
@@ -169,4 +210,3 @@
         setupLabel();
     });
 </script>
-

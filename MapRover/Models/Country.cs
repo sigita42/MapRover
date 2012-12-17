@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MapRover.Models
 {
-    [Bind(Exclude = "CountryId")]
+    //[Bind(Exclude = "CountryId")]
     public class Country
     {
-        public int CountryId { get; set; }
-        public string Name { get; set; }
         public string Cheers { get; set; }
-        public int CurrencyId { get; set; }
+
         public List<City> Cities { get; set; }
-        public List<NeighbourCountry> NeighbourCountries { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int CountryId { get; set; }
+
         public Currency Currency { get; set; }
+
+        public int CurrencyId { get; set; }
+
+        public string Name { get; set; }
+
+        public List<NeighbourCountry> NeighbourCountries { get; set; }
     }
 }

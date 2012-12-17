@@ -1,66 +1,84 @@
-.ic_container{
-    vertical-align:baseline;
-    margin:10px;
-    position:relative;
+.ic_container {
+    vertical-align: baseline;
+    margin: 10px;
+    position: relative;
     /*-moz-border-radius:10px;
     -webkit-border-radius:10px;
     -khtml-border-radius:10px;
     -moz-box-shadow: 0 1px 3px #888;
     -webkit-box-shadow: 0 1px 3px #888;*/
 }
-.overlay{
-    opacity:0.3;
-    position:absolute;
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+
+.overlay {
+    opacity: 0.3;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
 }
-.ic_caption{
-    position:absolute;    
-    opacity:0.8;   
-    overflow:hidden;
-    margin:0px;
-    padding:0px;
-    left:0px;
-    right:0px;
-    cursor:default;
-    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+
+.ic_caption {
+    position: absolute;
+    opacity: 0.8;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    right: 0px;
+    cursor: default;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
 }
-.ic_category{
-    text-transform:uppercase;
-    font-size:11px;
-    letter-spacing:3px;
-    padding:5px;
-    margin:0px;
+
+.ic_category {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 5px;
+    margin: 0px;
 }
-.ic_caption h3{
-    padding:0px 5px 5px 5px;
-    margin:0px;
-    font-size:18px;
+
+.ic_caption h3 {
+    padding: 0px 5px 5px 5px;
+    margin: 0px;
+    font-size: 18px;
 }
+
 .ic_text {
     height: 180px;
     padding: 0px;
     text-align: left;
     margin: 0px;
     font-size: 14px;
-    float: right;              
-    width: 70%;   /*combining these two properties i change text position in the caption*/
-    margin-right:45px;    /*combining these two properties i change text position in the caption*/
+    float: right;
+    width: 70%; /*combining these two properties i change text position in the caption*/
+    margin-right: 45px; /*combining these two properties i change text position in the caption*/
 }
+
+    .ic_text dt {
+        display: inline-block;
+        float: left;
+        clear: left;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .ic_text dd {
+        display: inline-block;
+        float: left;
+        font-style: italic;
+    }
+
 .ic_image {
     margin: 0px 5px 5px 20px;
     text-align: right;
     background-image: url('/Content/themes/base/images/Riga1-002.jpg');
     float: left;
-    padding-top:5px;
-    padding-bottom:5px;
-    position:absolute;
-    background-position:center;
-    width:150px;
-    height:180px;
-    
-
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    background-position: center;
+    width: 150px;
+    height: 180px;
 }
