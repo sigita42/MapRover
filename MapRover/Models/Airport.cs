@@ -19,5 +19,8 @@ namespace MapRover.Models
         public string Name { get; set; }
 
         public string webPage { get; set; }
+
+        public int Passengers { get; set; }
+
     }
 }

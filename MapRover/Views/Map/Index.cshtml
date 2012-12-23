@@ -8,7 +8,6 @@
 </script>
 
 @section RightBar {
-
     <h3>I am here:</h3>
     <br />
     <select id="citiesSelect" style="margin-bottom: 15px;">
@@ -64,6 +63,9 @@
             $('#cityName').text(cities[city].name);
             $('#citySize').text(cities[city].size);
             $('#cityPopulation').text(cities[city].population);
+            $('#cityCurrency').text(cities[city].currency);
+            $('#cityBreadPrice').text(cities[city].breadPrice);
+            $('#cityMilkPrice').text(cities[city].milkPrice);
             $('#cityDescription').text(cities[city].description);
             $('#cityPicture').css({ "background-image": cities[city].img_src });
         }
@@ -76,7 +78,7 @@
             distances[@city.CityId] = [];
             neighbours[@city.CityId] = [];
             cityCountry[@city.CityId] = @city.CountryId;
-            cities[@city.CityId] = { name: '@city.Name', description: '@city.Description', size: @city.Size.ToString(culture), population: @city.Population, img_src: "@city.Picture" };
+            cities[@city.CityId] = { name: '@city.Name', description: '@city.Description', size: @city.Size.ToString(culture), population: @city.Population, img_src: "@city.Picture", currency: '@city.CityCurrency',breadPrice: @city.BreadPrice.ToString(culture), milkPrice: @city.MilkPrice.ToString(culture)};
             </text>
             }
             @foreach (var distance in Model.Distances)
@@ -133,8 +135,8 @@
                     Hide neighbour countries</label>
             </fieldset>
         </form>
+        <h4><img src="Content/themes/base/images/CircleSmall1.png" />Red circles describe airport passenger load in the year 2011</h4>
     </div>
-
 }
 
 <hgroup class="title">
@@ -156,6 +158,12 @@
             km²
             <dt>Population:</dt>
             <dd id="cityPopulation" />
+            <dt>Currency:</dt>
+            <dd id="cityCurrency" />
+            <dt>Bread Price:</dt>
+            <dd id="breadPrice" />
+            <dt>Milk Price:</dt>
+            <dd id="milkPrice" />
             <dt>Description:</dt>
             <dd id="cityDescription" />
         </dl>

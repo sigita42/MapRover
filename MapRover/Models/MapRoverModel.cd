@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MapRover.Models.Airport">
+    <Position X="10.25" Y="7.5" Width="1.5" />
+    <Members>
+      <Property Name="PopulationAirport" Hidden="true" />
+      <Property Name="webPage" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAAAAABACAAAAAIAAAQAAQAFAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Airport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MapRover.Models.City">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAgAABACAggAAIAAAAAAQAAQIQAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\City.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Airports" />
+      <Property Name="ProductsInCity" />
+      <Property Name="Distances" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MapRover.Models.Country">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAgAAAAAAAAAAAAQACAAQBAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Models\Country.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Currency" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Cities" />
+      <Property Name="NeighbourCountries" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MapRover.Models.Currency">
+    <Position X="4.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAkAAAAAAAAAAAQQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Currency.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Countries" />
+      <Property Name="ExchangeRates" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MapRover.Models.Distance">
+    <Position X="13.25" Y="3.75" Width="1.5" />
+    <Members>
+      <Method Name="CalculateDistanceBetweenCities" Hidden="true" />
+      <Method Name="Distance" Hidden="true" />
+      <Field Name="RadiusOfEarthInKm" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQACAAAAAAAAAAAAAAAAAAAAAA0AAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\Distance.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CityA" />
+      <Property Name="CityB" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MapRover.Models.ExchangeRate">
+    <Position X="1.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAACgAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\ExchangeRate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CurrencyA" />
+      <Property Name="CurrencyB" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MapRover.Models.NeighbourCountry">
+    <Position X="7.25" Y="0.75" Width="1.75" />
+    <Members>
+      <Method Name="NeighbourCountry" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ADAAAAAAAAAAAAAACAAAAAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\NeighbourCountry.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CountryA" />
+      <Property Name="CountryB" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MapRover.Models.Product">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ProductInCities" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MapRover.Models.ProductInCity">
+    <Position X="10.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAABAQAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ProductInCity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

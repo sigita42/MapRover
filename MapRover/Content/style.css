@@ -46,7 +46,7 @@
 }
 
 .ic_text {
-    height: 180px;
+    height: 200px;
     padding: 0px;
     text-align: left;
     margin: 0px;
@@ -71,7 +71,7 @@
     }
 
 .ic_image {
-    margin: 0px 5px 5px 20px;
+    margin: 25px 5px 5px 20px;
     text-align: right;
     background-image: url('/Content/themes/base/images/Riga1-002.jpg');
     float: left;

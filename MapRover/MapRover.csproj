@@ -286,6 +286,7 @@
     <Content Include="Content\themes\base\fonts\SourceSansPro\SourceSansPro-Regular.ttf" />
     <Content Include="Content\themes\base\fonts\SourceSansPro\SourceSansPro-Semibold.ttf" />
     <Content Include="Content\themes\base\fonts\SourceSansPro\SourceSansPro-SemiboldItalic.ttf" />
+    <Content Include="Models\MapRoverModel.cd" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Images\ui-bg_flat_75_ffffff_40x100.png" />

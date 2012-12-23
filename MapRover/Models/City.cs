@@ -32,5 +32,11 @@ namespace MapRover.Models
         public List<ProductInCity> ProductsInCity { get; set; }
 
         public double Size { get; set; }
+
+        public string CityCurrency { get; set; }
+
+        public double BreadPrice { get; set; }
+
+        public double MilkPrice { get; set; }
     }
 }
